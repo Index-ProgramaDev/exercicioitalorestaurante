@@ -10,12 +10,4 @@ class Cliente {
   });
 }
 
-void main() {
-  Cliente cliente = Cliente(
-    id: 1,
-    nome: "João",
-    telefone: "99999-9999",
-  );
-
-  print(cliente.nome);
-}
+int calculate() => 42;

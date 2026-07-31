@@ -10,13 +10,4 @@ class Produto {
   });
 }
 
-void main() {
-  Produto produto = Produto(
-    id: 1,
-    nome: "Pizza",
-    preco: 50.0,
-  );
-
-  print("Produto: ${produto.nome}");
-  print("Preço: R\$ ${produto.preco}");
-}
+int calculate() => 42;

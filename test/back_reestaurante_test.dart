@@ -1,8 +1,12 @@
-import 'package:back_reestaurante/mesas.dart';
+import 'package:restaurante/mesas.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('calculate', () {
-    expect(calculate(), 42);
+  test('Mesa deve abrir corretamente', () {
+    final mesa = Mesa(numero: 3);
+    mesa.abrir();
+
+    expect(mesa.ocupada, isTrue);
+    expect(mesa.numero, 3);
   });
 }

@@ -1,45 +1,44 @@
-import '../lib/clientes.dart';
-import '../lib/produtos.dart';
-import '../lib/mesas.dart';
-import '../lib/pedidos.dart';
+import 'package:restaurante/clientes.dart';
+import 'package:restaurante/produtos.dart';
+import 'package:restaurante/mesas.dart';
+import 'package:restaurante/pedidos.dart';
 
 void main() {
-  Cliente cliente = Cliente(
+  final cliente = Cliente(
     id: 1,
-    nome: "João",
-    telefone: "(11) 99999-9999",
+    nome: 'João',
+    telefone: '(11) 99999-9999',
   );
 
-  Mesa mesa = Mesa(numero: 5);
-  mesa.abrir();
+  final mesa = Mesa(numero: 5)..abrir();
 
-  Produto pizza = Produto(
+  final pizza = Produto(
     id: 1,
-    nome: "Pizza Calabresa",
+    nome: 'Pizza Calabresa',
     preco: 50.0,
   );
 
-  Produto refrigerante = Produto(
+  final refrigerante = Produto(
     id: 2,
-    nome: "Refrigerante",
+    nome: 'Refrigerante',
     preco: 8.0,
   );
 
-  Pedido pedido = Pedido(
+  final pedido = Pedido(
     cliente: cliente,
     mesa: mesa,
-  );
+  )
+    ..adicionarProduto(pizza)
+    ..adicionarProduto(refrigerante);
 
-  pedido.adicionarProduto(pizza);
-  pedido.adicionarProduto(refrigerante);
+  print('Cliente: ${cliente.nome}');
+  print('Mesa: ${mesa.numero}');
+  print('Itens do pedido:');
 
-  print("Cliente: ${cliente.nome}");
-  print("Mesa: ${mesa.numero}");
-  print("Itens do pedido:");
-
-  for (var produto in pedido.produtos) {
-    print("- ${produto.nome} - R\$ ${produto.preco}");
+  for (final produto in pedido.produtos) {
+    print('- ${produto.nome} - R\$ ${produto.preco}');
   }
 
-  print("Subtotal: R\$ ${pedido.subtotal()}");
+  print('Subtotal: R\$ ${pedido.subtotal()}');
+  print('Total: R\$ ${pedido.total()}');
 }

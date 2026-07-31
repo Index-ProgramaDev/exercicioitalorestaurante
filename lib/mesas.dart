@@ -12,13 +12,4 @@ class Mesa {
   }
 }
 
-void main() {
-  Mesa mesa = Mesa(numero: 5);
-
-  print("Mesa ${mesa.numero}");
-  print("Ocupada: ${mesa.ocupada}");
-
-  mesa.abrir();
-
-  print("Depois de abrir: ${mesa.ocupada}");
-}
+int calculate() => 42;
